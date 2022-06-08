@@ -40,8 +40,8 @@ let hasElement = (set1, set2) => {
 
 let priceFilter = (courses, requiredRange) =>{
     let filtered = []
-    let requiredPriceFrom = Math.min(...requiredRange)
-    let requiredPriceTo = Math.max(...requiredRange)
+    let requiredPriceFrom = requiredRange[0]
+    let requiredPriceTo = requiredRange[1]
     let requiredPrices = rangeTo(requiredPriceFrom, requiredPriceTo);
     for (const course of courses) {
         let coursePriceFrom = course['prices'][0];
@@ -66,6 +66,11 @@ c = priceFilter(sortByPrice(courses), requiredRange3)
 console.log(a)
 console.log(b)
 console.log(c)
+
+// b = priceFilter(sortByPrice(courses), requiredRange2)
+// c = priceFilter(sortByPrice(courses), requiredRange3)
+
+
 
 
 
